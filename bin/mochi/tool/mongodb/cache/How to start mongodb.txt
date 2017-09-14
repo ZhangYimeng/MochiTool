@@ -1,0 +1,17 @@
+1、进入shell
+2、mongod --auth --dbpath <dbpath> --port <port>
+3、配置mongoDB的权限
+4、新开一个shell标签
+5、执行mongo
+6、use admin
+7、db.createUser(
+{
+user: "mochi",
+pwd: "gotohellmyevilex",
+roles: [ { role: "__system", db: "admin" } ]
+}
+)
+
+sudo echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
+sudo echo "never" >  /sys/kernel/mm/transparent_hugepage/defrag
+numactl --interleave=all ./mongod --dbpath ~/softs/mongodb/data/ --auth --fork --logpath ~/softs/mongodb/mongo.log

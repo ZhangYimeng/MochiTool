@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oracles>
+	<oraclearea>
+		<oraclepack>
+			<package>cn.workflow1</package>
+			<oracle>Workflow</oracle>
+			<fountainhead>WorkflowFountainhead</fountainhead>
+		</oraclepack>
+		<oraclepack>
+			<package>cn.workflow2</package>
+			<oracle>Workflow</oracle>
+		</oraclepack>
+	</oraclearea>
+	<oraclearea>
+		<oraclepack>
+			<package>cn.workflow3</package>
+			<oracle>Workflow</oracle>
+			<fountainhead>WorkflowFountainhead</fountainhead>
+		</oraclepack>
+	</oraclearea>
+</oracles>

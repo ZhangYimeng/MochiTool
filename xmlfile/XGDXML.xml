@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <Node id="37">
+        <Sensor>CAirTemperatureSensor</Sensor>
+        <Sensor>RAirTemperatureSensor</Sensor>
+        <Sensor>CAirHumiditySensor</Sensor>
+        <Sensor>RAirHumiditySensor</Sensor>
+        <Sensor>CLightSensor</Sensor>
+        <Sensor>RLightSensor</Sensor>
+        <Sensor>CSoilHumiditySensor</Sensor>
+        <Sensor>RSoilHumiditySensor</Sensor>
+    </Node>
+    <Node id="52">
+        <Sensor>CAirTemperatureSensor</Sensor>
+        <Sensor>RAirTemperatureSensor</Sensor>
+        <Sensor>CAirHumiditySensor</Sensor>
+        <Sensor>RAirHumiditySensor</Sensor>
+        <Sensor>CLightSensor</Sensor>
+        <Sensor>RLightSensor</Sensor>
+        <Sensor>CSoilHumiditySensor</Sensor>
+        <Sensor>RSoilHumiditySensor</Sensor>
+    </Node>
+    <Node id="66">
+        <Sensor>CAirTemperatureSensor</Sensor>
+        <Sensor>RAirTemperatureSensor</Sensor>
+        <Sensor>CAirHumiditySensor</Sensor>
+        <Sensor>RAirHumiditySensor</Sensor>
+        <Sensor>CLightSensor</Sensor>
+        <Sensor>RLightSensor</Sensor>
+        <Sensor>CSoilHumiditySensor</Sensor>
+        <Sensor>RSoilHumiditySensor</Sensor>
+    </Node>
+    <Node id="3">
+        <Sensor>CAirTemperatureSensor</Sensor>
+        <Sensor>RAirTemperatureSensor</Sensor>
+        <Sensor>CAirHumiditySensor</Sensor>
+        <Sensor>RAirHumiditySensor</Sensor>
+        <Sensor>CLightSensor</Sensor>
+        <Sensor>RLightSensor</Sensor>
+        <Sensor>CSoilHumiditySensor</Sensor>
+        <Sensor>RSoilHumiditySensor</Sensor>
+    </Node>
+</root>

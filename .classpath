@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="module.iot.src"/>
+	<classpathentry kind="src" path="module.usermanagement.src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="lib/json.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/algs4.jar"/>
+	<classpathentry kind="lib" path="lib/mongo-java-driver-3.2.2.jar" sourcepath="lib/mongo-java-driver-3.2.2-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
