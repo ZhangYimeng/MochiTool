@@ -17,8 +17,6 @@
 
 package mochi.tool.bson.util;
 
-import com.mongodb.annotations.ThreadSafe;
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -28,7 +26,6 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.mongodb.assertions.Assertions.notNull;
 import static java.util.Collections.unmodifiableCollection;
 import static java.util.Collections.unmodifiableSet;
 
@@ -39,7 +36,6 @@ import static java.util.Collections.unmodifiableSet;
  * @param <V> The value type
  * @param <M> the internal {@link java.util.Map} or extension for things like sorted and navigable maps.
  */
-@ThreadSafe
 abstract class AbstractCopyOnWriteMap<K, V, M extends Map<K, V>> implements ConcurrentMap<K, V> {
 
     // @GuardedBy("lock")
@@ -60,12 +56,18 @@ abstract class AbstractCopyOnWriteMap<K, V, M extends Map<K, V>> implements Conc
      * @param map      the initial map to initialize with
      * @param viewType for writable or read-only key, value and entrySet views
      */
-    protected <N extends Map<? extends K, ? extends V>> AbstractCopyOnWriteMap(final N map, final View.Type viewType) {
-        this.delegate = notNull("delegate", copy(notNull("map", map)));
-        this.view = notNull("viewType", viewType).get(this);
+    @SuppressWarnings("unchecked")
+	protected <N extends Map<? extends K, ? extends V>> AbstractCopyOnWriteMap(final N map, final View.Type viewType) {
+        this.delegate = (M) notNull("delegate", copy(notNull("map", map)));
+        this.view = (View<K, V>) notNull("viewType", viewType).get(this);
     }
 
-    /**
+    private <N> Map<? extends K, ? extends V> notNull(String string, N map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/**
      * Copy function, implemented by sub-classes.
      *
      * @param <N> the map to copy and return.

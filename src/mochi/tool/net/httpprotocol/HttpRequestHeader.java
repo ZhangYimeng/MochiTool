@@ -20,9 +20,10 @@ public class HttpRequestHeader {
 	private String connection;
 	private String cache_control;
 	private String cookie;
+	private StringBuffer sb;
 	
 	public HttpRequestHeader() {
-		
+		sb = new StringBuffer();
 	}
 	
 	public String generateRequestHeader() throws HttpRequestHeaderNoHostException {
@@ -155,6 +156,14 @@ public class HttpRequestHeader {
 
 	public void setAccept(String accept) {
 		this.accept = accept;
+	}
+	
+	public void setSomeThing(String something) {
+		sb.append(something + "\r\n"); 
+	}
+	
+	public String getSomeThing() {
+		return sb.toString();
 	}
 
 }

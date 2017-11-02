@@ -26,5 +26,5 @@ public class MasterServerListenerThread implements Runnable {
 			}
 		}
 	}
-
+	
 }

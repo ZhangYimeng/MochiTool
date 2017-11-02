@@ -215,6 +215,9 @@ public class HttpRequestSender {
 			if(this.hrh.getUser_agent() != null) {
 				out.write(this.hrh.getUser_agent() + "\r\n");
 			}
+			if(this.hrh.getSomeThing() != "") {
+				out.write(this.hrh.getSomeThing());
+			}
 			if(this.hrb != null) {
 				out.write("\r\n");
 				switch(this.hrb.getFlag()) {
@@ -230,7 +233,7 @@ public class HttpRequestSender {
 				default:
 					break;
 				}
-				}
+			}
 			out.write("\r\n");
 		}
 		out.flush();
