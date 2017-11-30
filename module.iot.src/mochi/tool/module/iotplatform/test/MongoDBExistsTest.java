@@ -13,9 +13,8 @@ import mochi.tool.module.iotplatform.foundation.mongodbtool.MongoDBConfig;
 
 public class MongoDBExistsTest {
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "resource" })
 	public static void main(String[] args) throws UnknownHostException {
-		@SuppressWarnings("resource")
 		MongoClient mc = new MongoClient(MongoDBConfig.IP, MongoDBConfig.PORT);
 		DB db = mc.getDB("test");
 		DBCollection dbc = db.getCollection("test");

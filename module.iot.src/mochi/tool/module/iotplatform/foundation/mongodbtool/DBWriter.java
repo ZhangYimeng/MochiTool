@@ -1,5 +1,6 @@
 package mochi.tool.module.iotplatform.foundation.mongodbtool;
 
+import java.net.UnknownHostException;
 import java.util.LinkedList;
 
 import mochi.tool.module.iotplatform.foundation.exception.DuplicateException;
@@ -12,7 +13,7 @@ import com.mongodb.MongoException;
 
 public class DBWriter extends DBBridge {
 
-	public DBWriter(String ip, int port) {
+	public DBWriter(String ip, int port) throws UnknownHostException {
 		super(ip, port);
 	}
 	

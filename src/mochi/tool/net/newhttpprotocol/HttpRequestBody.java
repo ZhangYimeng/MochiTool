@@ -1,4 +1,4 @@
-package mochi.tool.net.httpprotocol;
+package mochi.tool.net.newhttpprotocol;
 
 import java.io.File;
 import java.io.InputStream;
@@ -9,7 +9,6 @@ import mochi.tool.data.interconversion.DataInterconversionTool;
  * @author saito
  *
  */
-@Deprecated
 public class HttpRequestBody {
 
 	private File file;

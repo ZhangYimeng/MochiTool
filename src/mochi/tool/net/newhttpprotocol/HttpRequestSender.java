@@ -1,4 +1,4 @@
-package mochi.tool.net.httpprotocol;
+package mochi.tool.net.newhttpprotocol;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +15,6 @@ import mochi.tool.net.httpprotocol.exception.HttpRequestLineNoMethodException;
 import mochi.tool.net.httpprotocol.exception.HttpRequestLineNoUrlException;
 import mochi.tool.net.httpprotocol.exception.HttpRequestLineNoVersionException;
 
-@Deprecated
 public class HttpRequestSender {
 
 	private int port = 80;
@@ -149,76 +148,46 @@ public class HttpRequestSender {
 	HttpRequestLineNoUrlException, HttpRequestLineNoVersionException, HttpRequestHeaderNoHostException {
 		@SuppressWarnings("resource")
 		Socket s = new Socket();
-		SocketAddress socketAddress = new InetSocketAddress(this.hrh.getHost().substring(6), this.port);
+		SocketAddress socketAddress = new InetSocketAddress(this.hrh.getHost(), this.port);
 	    s.connect(socketAddress);
 		OutputStreamWriter out = new OutputStreamWriter(s.getOutputStream());
 		out.write(this.hrl.generateRequestLine() + "\r\n");
 		if(this.hrl.isGetMethod()) {
-			if(this.hrh.getAccept() != null) {
-				out.write(this.hrh.getAccept() + "\r\n");
-			}
-			if(this.hrh.getAccept_language() != null) {
-				out.write(this.hrh.getAccept_language() + "\r\n");
-			}
-			if(this.hrh.getHost() != null) {
-				out.write(this.hrh.getHost() + "\r\n");
-			}
-			if(this.hrh.getCache_control() != null) {
-				out.write(this.hrh.getCache_control() + "\r\n");
-			}
-			if(this.hrh.getConnection() != null) {
-				out.write(this.hrh.getConnection() + "\r\n");
-			}
-			if(this.hrh.getContent_lenth() != null) {
-				out.write(this.hrh.getContent_lenth() + "\r\n");
-			}
-			if(this.hrh.getContent_type() != null) {
-				out.write(this.hrh.getContent_type() + "\r\n");
-			}
-			if(this.hrh.getCookie() != null) {
-				out.write(this.hrh.getCookie() + "\r\n");
-			}
-			if(this.hrh.getReferer() != null) {
-				out.write(this.hrh.getReferer() + "\r\n");
-			}
-			if(this.hrh.getUser_agent() != null) {
-				out.write(this.hrh.getUser_agent() + "\r\n");
-			}
+//			if(this.hrh.getAccept() != null) {
+//				out.write(this.hrh.getAccept() + "\r\n");
+//			}
+//			if(this.hrh.getAccept_language() != null) {
+//				out.write(this.hrh.getAccept_language() + "\r\n");
+//			}
+//			if(this.hrh.getHost() != null) {
+//				out.write(this.hrh.getHost() + "\r\n");
+//			}
+//			if(this.hrh.getCache_control() != null) {
+//				out.write(this.hrh.getCache_control() + "\r\n");
+//			}
+//			if(this.hrh.getConnection() != null) {
+//				out.write(this.hrh.getConnection() + "\r\n");
+//			}
+//			if(this.hrh.getContent_lenth() != null) {
+//				out.write(this.hrh.getContent_lenth() + "\r\n");
+//			}
+//			if(this.hrh.getContent_type() != null) {
+//				out.write(this.hrh.getContent_type() + "\r\n");
+//			}
+//			if(this.hrh.getCookie() != null) {
+//				out.write(this.hrh.getCookie() + "\r\n");
+//			}
+//			if(this.hrh.getReferer() != null) {
+//				out.write(this.hrh.getReferer() + "\r\n");
+//			}
+//			if(this.hrh.getUser_agent() != null) {
+//				out.write(this.hrh.getUser_agent() + "\r\n");
+//			}
+			out.write(hrh.generateRequestHeader());
 			out.write("\r\n");
 		} else {
-			if(this.hrh.getAccept() != null) {
-				out.write(this.hrh.getAccept() + "\r\n");
-			}
-			if(this.hrh.getAccept_language() != null) {
-				out.write(this.hrh.getAccept_language() + "\r\n");
-			}
-			if(this.hrh.getHost() != null) {
-				out.write(this.hrh.getHost() + "\r\n");
-			}
-			if(this.hrh.getCache_control() != null) {
-				out.write(this.hrh.getCache_control() + "\r\n");
-			}
-			if(this.hrh.getConnection() != null) {
-				out.write(this.hrh.getConnection() + "\r\n");
-			}
-			if(this.hrh.getContent_lenth() != null) {
-				out.write(this.hrh.getContent_lenth() + "\r\n");
-			}
-			if(this.hrh.getContent_type() != null) {
-				out.write(this.hrh.getContent_type() + "\r\n");
-			}
-			if(this.hrh.getCookie() != null) {
-				out.write(this.hrh.getCookie() + "\r\n");
-			}
-			if(this.hrh.getReferer() != null) {
-				out.write(this.hrh.getReferer() + "\r\n");
-			}
-			if(this.hrh.getUser_agent() != null) {
-				out.write(this.hrh.getUser_agent() + "\r\n");
-			}
-			if(this.hrh.getSomeThing() != "") {
-				out.write(this.hrh.getSomeThing());
-			}
+			out.write(hrh.generateRequestHeader());
+			out.write("\r\n");
 			if(this.hrb != null) {
 				out.write("\r\n");
 				switch(this.hrb.getFlag()) {
@@ -238,10 +207,7 @@ public class HttpRequestSender {
 			out.write("\r\n");
 		}
 		out.flush();
-		InputStream in = s.getInputStream();
-		//out.close();
-		//s.close();
-		return new HttpResponseContent(in);
+		return new HttpResponseContent(s);
 	}
 	
 	public String toString() {

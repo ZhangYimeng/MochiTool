@@ -1,5 +1,6 @@
 package mochi.tool.module.iotplatform.foundation.mongodbtool;
 
+import java.net.UnknownHostException;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -13,7 +14,7 @@ import com.mongodb.DBObject;
 
 public class DBReader extends DBBridge {
 
-	private DBReader(String ip, int port) {
+	private DBReader(String ip, int port) throws UnknownHostException {
 		super(ip, port);
 	}
 	

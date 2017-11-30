@@ -10,9 +10,8 @@ import com.mongodb.MongoClient;
 
 public class DataTypeTest {
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "resource" })
 	public static void main(String[] args) throws UnknownHostException {
-		@SuppressWarnings("resource")
 		MongoClient mc = new MongoClient("127.0.0.1", 27017);
 		DB db = mc.getDB("test");
 		DBCollection dbc = db.getCollection("test");

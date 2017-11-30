@@ -1,11 +1,10 @@
-package mochi.tool.net.httpprotocol;
+package mochi.tool.net.newhttpprotocol;
 
 /**
  * 一些常用的Http请求header的参数，直接调用即可。
  * @author saito
  *
  */
-@Deprecated
 public class HttpRequestHeaderInfo {
 	
 	/**

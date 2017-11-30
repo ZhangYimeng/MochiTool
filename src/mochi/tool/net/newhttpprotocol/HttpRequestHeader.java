@@ -1,12 +1,12 @@
-package mochi.tool.net.httpprotocol;
+package mochi.tool.net.newhttpprotocol;
 
 import mochi.tool.net.httpprotocol.exception.HttpRequestHeaderNoHostException;
 
 /**
  * 生成Http请求的报文头。
  * @author saito
+ *
  */
-@Deprecated
 public class HttpRequestHeader {
 	
 	private String accept;
@@ -29,39 +29,42 @@ public class HttpRequestHeader {
 	public String generateRequestHeader() throws HttpRequestHeaderNoHostException {
 		StringBuffer header = new StringBuffer();
 		if(this.accept != null) {
-			header.append(this.accept + "\n");
+			header.append("Accept: " + this.accept + "\r\n");
 		}
 		if(this.referer != null) {
-			header.append(this.referer + "\n");
+			header.append("Referer: " + this.referer + "\r\n");
 		}
 		if(this.accept_language != null) {
-			header.append(this.accept_language + "\n");
+			header.append("Accept-Language: " + this.accept_language + "\r\n");
 		}
 		if(this.user_agent != null) {
-			header.append(this.user_agent + "\n");
+			header.append("User-Agent: " + this.user_agent + "\r\n");
 		}
 		if(this.content_type != null) {
-			header.append(this.content_type + "\n");
+			header.append("Content-Type: " + this.content_type + "\r\n");
 		}
 		if(this.host != null) {
-			header.append(this.host + "\n");
+			header.append("Host: " + this.host + "\r\n");
 		} else {
 			throw new HttpRequestHeaderNoHostException("未指定Host！");
 		}
 		if(this.content_lenth != null) {
-			header.append(this.content_lenth + "\n");
+			header.append("Content-Length: " + this.content_lenth + "\r\n");
 		}
 		if(this.connection != null) {
-			header.append(this.connection + "\n");
+			header.append("Connection: " + this.connection + "\r\n");
 		}
 		if(this.cache_control != null) {
-			header.append(this.cache_control + "\n");
+			header.append("Cache-Control: " + this.cache_control + "\r\n");
 		}
 		if(this.cookie != null) {
-			header.append(this.cookie + "\n");
+			header.append("Cookie: " + this.cookie + "\r\n");
 		}
 		if(this.accept_encoding != null) {
-			header.append(this.accept_encoding);
+			header.append("Accept-Encoding: " + this.accept_encoding + "\r\n");
+		}
+		if(this.sb.toString() != "") {
+			header.append(sb.toString() + "\r\n");
 		}
 		return header.toString();
 	}

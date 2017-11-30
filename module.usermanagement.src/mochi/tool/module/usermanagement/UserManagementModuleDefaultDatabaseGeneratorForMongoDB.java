@@ -10,7 +10,6 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
-@SuppressWarnings("unused")
 public class UserManagementModuleDefaultDatabaseGeneratorForMongoDB {
 
 	private MongoClient mc;
@@ -18,7 +17,7 @@ public class UserManagementModuleDefaultDatabaseGeneratorForMongoDB {
 	private DBCollection collection;
 	
 	@SuppressWarnings("deprecation")
-	public UserManagementModuleDefaultDatabaseGeneratorForMongoDB() {
+	public UserManagementModuleDefaultDatabaseGeneratorForMongoDB() throws UnknownHostException {
 		mc = new MongoClient(UserManagementConfiguration_MongoDBMode.IP, UserManagementConfiguration_MongoDBMode.PORT);
 		db = mc.getDB(UserManagementConfiguration_MongoDBMode.DATABASE);
 		db.dropDatabase();

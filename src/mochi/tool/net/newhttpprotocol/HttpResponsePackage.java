@@ -1,6 +1,5 @@
-package mochi.tool.net.httpprotocol;
+package mochi.tool.net.newhttpprotocol;
 
-@Deprecated
 public class HttpResponsePackage {
 
 	private byte[] responseBytes;

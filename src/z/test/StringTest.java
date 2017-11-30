@@ -91,6 +91,11 @@ public class StringTest {
 		for(byte b: vb) {
 			System.out.println(Integer.toHexString(b));
 		}
+		
+		String s = new String("   s d f g   ");
+		System.out.println(s);
+		s = s.trim();
+		System.out.println(s);
 	}
 
 }

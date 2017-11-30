@@ -1,4 +1,4 @@
-package mochi.tool.net.httpprotocol;
+package mochi.tool.net.newhttpprotocol;
 
 import mochi.tool.net.httpprotocol.exception.HttpRequestLineNoMethodException;
 import mochi.tool.net.httpprotocol.exception.HttpRequestLineNoUrlException;
@@ -8,7 +8,6 @@ import mochi.tool.net.httpprotocol.exception.HttpRequestLineNoVersionException;
  * 用于生成Http请求的请求行。
  * @author saito
  */
-@Deprecated
 public class HttpRequestLine {
 
 	private String method;

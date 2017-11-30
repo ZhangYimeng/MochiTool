@@ -12,7 +12,7 @@ import com.mongodb.MongoClient;
 
 public class InsertExperienceData {
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "resource" })
 	public static void main(String[] args) throws UnknownHostException, DBCollectionNotExistException {
 		MongoClient mc = new MongoClient();
 		DB db = mc.getDB("mochi");
