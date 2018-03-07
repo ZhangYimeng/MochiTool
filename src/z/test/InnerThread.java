@@ -14,7 +14,7 @@ public class InnerThread implements Runnable {
 	
 	@Override
 	public void run() {
-		for(int i = 0; i < 100000; i++) {
+		for(int i = 0; i < 10000000; i++) {
 			try {
 				kas.fire(new BuletM());
 			} catch (IOException e) {
