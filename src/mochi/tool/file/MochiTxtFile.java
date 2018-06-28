@@ -153,10 +153,7 @@ public class MochiTxtFile {
 	}
 
 	public static void main(String[] args) throws IOException, CanNotWriteException, NotAFileException {
-		MochiTxtFile mf = new MochiTxtFile("/Users/zhangyimeng/iPhone X.txt", false);
-		mf.write("你好呀！");
-		mf.write("哦！你也好！\n");
-		mf.write("=======+=====");
+		MochiTxtFile mf = new MochiTxtFile("/Users/zhangyimeng/从属关系.csv", true);
 		System.out.print(mf.readAllContents());
 		System.out.println("over");
 
