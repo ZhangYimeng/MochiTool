@@ -152,6 +152,10 @@ public class MochiTxtFile {
 		}
 	}
 
+	public void delete() {
+		file.delete();
+	}
+
 	public static void main(String[] args) throws IOException, CanNotWriteException, NotAFileException {
 		MochiTxtFile mf = new MochiTxtFile("/Users/zhangyimeng/iPhone X.txt", false);
 		mf.write("你好呀！");
